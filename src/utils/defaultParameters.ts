@@ -1,0 +1,10 @@
+export let startHandleX: number = 30;
+export let startHandleY: number = 140;
+export let endHandleX: number = 90;
+export let endHandleY: number = 100;
+export let dragging: string | null = null;
+export let currentEasingType: { group: string; title: string } | null = null;
+export let copyButtonIcon: string = `copy`;
+export let startHandle: SVGElement | null = null;
+export let endHandle: SVGElement | null = null;
+export let outerFrame: SVGElement | null = null;
