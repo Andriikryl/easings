@@ -1,4 +1,5 @@
 <script lang="ts">
+  import HeigthEasing from "./HeigthEasing.svelte";
   import MovementEasing from "./MovementEasing.svelte";
   import WidthEasing from "./WidthEasing.svelte";
   export let currentEasingType: string | any;
@@ -9,6 +10,7 @@
   <h3 class="title">animation</h3>
   <MovementEasing {curveCSS} {currentEasingType} />
   <WidthEasing {curveCSS} {currentEasingType} />
+  <HeigthEasing {curveCSS} {currentEasingType} />
 </div>
 
 <style>
