@@ -151,7 +151,7 @@
 
       <div class="curve-selection">
         {#each Object.entries(premadeEasings) as [group, _]}
-          <h3 class="h4">
+          <h3 class="selection__title">
             {group === "browser" ? "Browser defaults" : "VS Code presets"}
           </h3>
           {#each Object.entries(premadeEasings[group]) as [title, curve]}
@@ -239,20 +239,18 @@
       minmax(min(100%, var(--layout-grid-min)), 1fr)
     );
     gap: var(--layout-grid-gap);
-    h3 {
+    .selection__title {
+      padding: 12px;
+      background: var(--gray-1, #eee);
       grid-column: 1 / -1;
-      background-color: #003049;
-      width: 100%;
-      text-align: center;
-      display: block;
-      color: #d62828;
-      font-family: Montserrat;
-      font-size: 34px;
+      text-align: left;
+      color: var(--black, #1b1b1b);
+      font-family: Patrick Hand;
+      font-size: 30px;
       font-style: normal;
-      font-weight: 500;
-      line-height: 145.4%; /* 20.356px */
-      text-transform: uppercase;
-      margin-block-end: 20px;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.3px;
     }
   }
   .transparent {

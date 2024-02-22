@@ -17,7 +17,7 @@
         </div>
         <div class="flex__group">
           <div class="info__bloc">
-            <p>How use grid?</p>
+            <p>Cubic?</p>
           </div>
           <div class="image__boxWem">
             <img src="/women.svg" width="54" height="54" alt="women" />
