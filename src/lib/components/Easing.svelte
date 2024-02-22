@@ -14,6 +14,7 @@
   import CircleControls from "./CircleControls.svelte";
   import SelectionCurve from "./SelectionCurve.svelte";
   import AnimationBlock from "./AnimationBlock.svelte";
+  import ArrowDown from "./ArrowDown.svelte";
 
   let startHandleX: number = 30;
   let startHandleY: number = 140;
@@ -161,6 +162,7 @@
       </div>
     </form>
 
+    <ArrowDown />
     <div>
       <AnimationBlock {currentEasingType} {curveCSS} />
     </div>
