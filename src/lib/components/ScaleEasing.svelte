@@ -5,8 +5,8 @@
 </script>
 
 <div class="movement__box">
-  <h4 class="movement__title">Width</h4>
-  <LiniarEasing type={"width"} />
+  <h4 class="movement__title">Scale</h4>
+  <LiniarEasing type={"scale"} />
 
   <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
   <div class="playground">
@@ -47,9 +47,10 @@
     animation: move__curent 1500ms var(--bize) infinite;
   }
   .playground {
+    width: 300px;
+    height: 300px;
     display: grid;
     place-items: center;
-    width: 100%;
     padding-block: 20px;
     padding-inline: 10px;
     border: 1px solid var(--lighterGray);
@@ -72,14 +73,14 @@
 
   @keyframes move__curent {
     0% {
-      transform: scaleX(1);
+      transform: scale(1);
     }
 
     50% {
-      transform: scaleX(7);
+      transform: scale(3);
     }
     100% {
-      transform: scaleX(1);
+      transform: scale(1);
     }
   }
 </style>

@@ -10,27 +10,33 @@
 </script>
 
 {#if type === "movement"}
-  <div class="container">
-    <h3 class="curent__title">Liniar</h3>
-    <div class="playground">
-      <div class="box"></div>
-    </div>
+  <h3 class="curent__title">Liniar</h3>
+  <div class="playground">
+    <div class="box"></div>
   </div>
 {/if}
 {#if type === "width"}
-  <div class="container">
-    <h3 class="curent__title">Liniar</h3>
-    <div class="playground | play__width">
-      <div class="box__width"></div>
-    </div>
+  <h3 class="curent__title">Liniar</h3>
+  <div class="playground | play__width">
+    <div class="box__width"></div>
   </div>
 {/if}
 {#if type === "height"}
-  <div class="container">
-    <h3 class="curent__title">Liniar</h3>
-    <div class="playground | play__height">
-      <div class="box__height"></div>
-    </div>
+  <h3 class="curent__title">Liniar</h3>
+  <div class="playground | play__height">
+    <div class="box__height"></div>
+  </div>
+{/if}
+{#if type === "scale"}
+  <h3 class="curent__title">Liniar</h3>
+  <div class="playground | play__scale">
+    <div class="box__scale"></div>
+  </div>
+{/if}
+{#if type === "rotate"}
+  <h3 class="curent__title">Liniar</h3>
+  <div class="playground | play__rotate">
+    <div class="box__rotate"></div>
   </div>
 {/if}
 
@@ -66,10 +72,6 @@
     text-decoration: none;
     margin-block-end: 10px;
   }
-  .container {
-    margin-block-end: 20px;
-  }
-
   .box {
     --size: 50px;
     width: var(--size);
@@ -137,6 +139,59 @@
     }
     100% {
       transform: scaleY(1);
+    }
+  }
+  .play__scale {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+  }
+  .box__scale {
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+    border: 2px solid tomato;
+    animation: move__scale 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+  }
+  @keyframes move__scale {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .play__rotate {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+  }
+  .box__rotate {
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+    border: 2px solid tomato;
+    animation: move__rotate 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+  }
+  @keyframes move__rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    30% {
+      transform: rotate(90deg);
+    }
+    70% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 </style>

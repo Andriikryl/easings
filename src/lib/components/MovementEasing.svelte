@@ -5,12 +5,12 @@
 </script>
 
 <div class="movement__box">
-  <h4 class="movement__title">Width</h4>
-  <LiniarEasing type={"width"} />
+  <h4 class="movement__title">Movement</h4>
+  <LiniarEasing type={"movement"} />
 
-  <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
-  <div class="playground">
-    <div class="box__curent" style="--bize: {curveCSS}"></div>
+    <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
+    <div class="playground">
+      <div class="box__curent" style="--bize: {curveCSS}"></div>
   </div>
 </div>
 
@@ -39,6 +39,7 @@
     text-decoration: none;
     margin-block-end: 10px;
   }
+
   .box__curent {
     --size: 50px;
     width: var(--size);
@@ -47,8 +48,6 @@
     animation: move__curent 1500ms var(--bize) infinite;
   }
   .playground {
-    display: grid;
-    place-items: center;
     width: 100%;
     padding-block: 20px;
     padding-inline: 10px;
@@ -72,14 +71,14 @@
 
   @keyframes move__curent {
     0% {
-      transform: scaleX(1);
+      transform: translateX(0%);
     }
 
     50% {
-      transform: scaleX(7);
+      transform: translateX(500%);
     }
     100% {
-      transform: scaleX(1);
+      transform: translateX(0%);
     }
   }
 </style>

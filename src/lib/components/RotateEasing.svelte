@@ -7,11 +7,10 @@
 <div class="movement__box">
   <h4 class="movement__title">Rotate</h4>
   <LiniarEasing type={"rotate"} />
-  <div class="container">
-    <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
-    <div class="playground">
-      <div class="box__curent" style="--bize: {curveCSS}"></div>
-    </div>
+
+  <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
+  <div class="playground">
+    <div class="box__curent" style="--bize: {curveCSS}"></div>
   </div>
 </div>
 
@@ -39,9 +38,6 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-block-end: 10px;
-  }
-  .container {
-    margin-block-end: 20px;
   }
   .box__curent {
     --size: 50px;
