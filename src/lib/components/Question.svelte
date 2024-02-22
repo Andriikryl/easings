@@ -1,6 +1,7 @@
 <script>
   import Accordion from "./Accordion.svelte";
   import AccordionItem from "./AccordionItem.svelte";
+  import ArrowDown from "./ArrowDown.svelte";
 
   const items = [
     {
@@ -21,7 +22,7 @@
   ];
 </script>
 
-<section class="content">
+<section class="questions">
   <div class="container">
     <div class="content__box">
       <Accordion collapse --accordion-width="50ch">
@@ -33,10 +34,14 @@
         {/each}
       </Accordion>
     </div>
+    <ArrowDown />
   </div>
 </section>
 
 <style>
+  .questions {
+    margin-block-end: 30px;
+  }
   .content__box {
     margin-block: 50px;
     max-width: 500px;

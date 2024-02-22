@@ -1,4 +1,5 @@
 <script>
+  import ArrowDown from "./ArrowDown.svelte";
   import Container from "./Container.svelte";
 </script>
 
@@ -24,9 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="arrow__dowBox">
-        <img src="/Arrow left.svg" width="251" height="14" alt="" />
-      </div>
+      <ArrowDown />
     </div>
   </Container>
 </section>
@@ -48,13 +47,6 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
-  }
-
-  .arrow__dowBox {
-    margin-block: 100px;
-    display: grid;
-    place-items: center;
-    transform: rotate(-90deg);
   }
 
   .hero__title {
