@@ -5,3 +5,4 @@ interface EasingGroup {
   interface PremadeEasings {
     [key: string]: EasingGroup;
   }
+
