@@ -26,6 +26,7 @@
   let startHandle: SVGElement | null = null;
   let endHandle: SVGElement | null = null;
   let outerFrame: SVGElement | null = null;
+  let itemsToDisplay = 6;
 
   $: startHandleXToBinary = formatDecimal((startHandleX - 20) / 100);
   $: startHandleYToBinary = formatDecimal((300 - startHandleY) / 100 - 1);
@@ -150,15 +151,22 @@
         <CurentButton {copyToClipboard} {copyButtonIcon} />
       </div>
 
-      <div class="curve-selection">
-        {#each Object.entries(premadeEasings) as [group, _]}
-          <h3 class="selection__title">
-            {group === "browser" ? "Browser defaults" : "VS Code presets"}
-          </h3>
-          {#each Object.entries(premadeEasings[group]) as [title, curve]}
-            <SelectionCurve {title} {curve} {group} bind:currentEasingType />
+      <div class="inner__wrapper">
+        <div class="curve-selection">
+          {#each Object.entries(premadeEasings).slice(0, itemsToDisplay) as [group, _]}
+            <h3 class="selection__title">
+              {group === "browser" ? "Browser defaults" : "VS Code presets"}
+            </h3>
+            {#each Object.entries(premadeEasings[group]).slice(0, itemsToDisplay) as [title, curve]}
+              <SelectionCurve {title} {curve} {group} bind:currentEasingType />
+            {/each}
           {/each}
-        {/each}
+        </div>
+        <div class="box">
+          <button class="select__more" on:click={() => (itemsToDisplay += 5)}
+            >Show More</button
+          >
+        </div>
       </div>
     </form>
 
@@ -170,6 +178,26 @@
 </section>
 
 <style lang="scss">
+  .box {
+    display: grid;
+    place-items: center;
+  }
+  .select__more {
+    width: max-content;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid var(--black, #1b1b1b);
+    background: var(--white, #fff);
+    color: var(--black, #1b1b1b);
+    text-align: center;
+    font-family: Patrick Hand;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    cursor: pointer;
+    margin-inline: auto;
+  }
   .easing__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -230,17 +258,23 @@
     stroke-miterlimit: 1.5;
   }
 
-  .curve-selection {
+  .inner__wrapper {
     width: 70%;
+    margin-inline: auto;
+  }
+
+  .curve-selection {
+    margin-block-end: 20px;
+    width: 100%;
     --layout-grid-min: 20ch;
     --layout-grid-gap: 1vw;
     display: grid;
-    margin-inline: auto;
     grid-template-columns: repeat(
       auto-fit,
       minmax(min(100%, var(--layout-grid-min)), 1fr)
     );
     gap: var(--layout-grid-gap);
+    grid-auto-rows: min-content;
     .selection__title {
       padding: 12px;
       background: var(--gray-1, #eee);
@@ -253,6 +287,7 @@
       font-weight: 400;
       line-height: normal;
       letter-spacing: -0.3px;
+      height: max-content;
     }
   }
   .transparent {
