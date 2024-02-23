@@ -18,3 +18,4 @@ export function getAccordionOptions() {
 	const activeComponentId = getContext<ActiveIdContext>('active')
 	return { collapse, activeComponentId }
 }
+

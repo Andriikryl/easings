@@ -1,29 +1,44 @@
 <script lang="ts">
   import LiniarEasing from "./LiniarEasing.svelte";
   export let currentEasingType: string | any;
+  import { GUI, guiControls } from "$lib/gui";
   export let curveCSS: string;
+  const gui = guiControls({
+    ms: 1500,
+  });
 </script>
 
 <div class="movement__box">
-  <h4 class="movement__title">Movement</h4>
-  <LiniarEasing type={"movement"} />
-
-    <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
-    <div class="playground">
-      <div class="box__curent" style="--bize: {curveCSS}"></div>
+  <div class="flex__group">
+    <h4 class="movement__title">Movement</h4>
+    <GUI controls={gui} />
+  </div>
+  <LiniarEasing type={"movement"} ms={$gui.ms} />
+  <h3 class="curent__title">{currentEasingType?.title || "custom"}</h3>
+  <div class="playground">
+    <div
+      class="box__curent"
+      style="--bize: {curveCSS}; --spide: {$gui.ms}ms"
+    ></div>
   </div>
 </div>
 
 <style>
   .movement__title {
     font-weight: bold;
-    font-size: 40px;
+    font-size: clamp(20px, 2vw + 1rem, 40px);
     font-family: HelveticaNowDisplay, "Helvetica Neue Light", "Helvetica Neue",
       Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: #ffff;
     padding: 8px;
     text-decoration: none;
+    flex-grow: 1;
+  }
+  .flex__group {
     margin-block-end: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .movement__box {
     border: 1px solid #ffc300;
@@ -45,7 +60,7 @@
     width: var(--size);
     height: var(--size);
     border: 2px solid tomato;
-    animation: move__curent 1500ms var(--bize) infinite;
+    animation: move__curent var(--spide) var(--bize) infinite;
   }
   .playground {
     width: 100%;

@@ -7,36 +7,37 @@
     | "rotate"
     | "opacity";
   export let type: AnimationProps;
+  export let ms: number;
 </script>
 
 {#if type === "movement"}
   <h3 class="curent__title">Liniar</h3>
   <div class="playground">
-    <div class="box"></div>
+    <div class="box" style="--spide: {ms}ms"></div>
   </div>
 {/if}
 {#if type === "width"}
   <h3 class="curent__title">Liniar</h3>
   <div class="playground | play__width">
-    <div class="box__width"></div>
+    <div class="box__width" style="--spide: {ms}ms"></div>
   </div>
 {/if}
 {#if type === "height"}
   <h3 class="curent__title">Liniar</h3>
   <div class="playground | play__height">
-    <div class="box__height"></div>
+    <div class="box__height" style="--spide: {ms}ms"></div>
   </div>
 {/if}
 {#if type === "scale"}
   <h3 class="curent__title">Liniar</h3>
   <div class="playground | play__scale">
-    <div class="box__scale"></div>
+    <div class="box__scale" style="--spide: {ms}ms"></div>
   </div>
 {/if}
 {#if type === "rotate"}
   <h3 class="curent__title">Liniar</h3>
   <div class="playground | play__rotate">
-    <div class="box__rotate"></div>
+    <div class="box__rotate" style="--spide: {ms}ms"></div>
   </div>
 {/if}
 
@@ -77,7 +78,7 @@
     width: var(--size);
     height: var(--size);
     border: 2px solid tomato;
-    animation: move 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+    animation: move var(--spide) cubic-bezier(0, 0, 1, 1) infinite;
   }
   @keyframes move {
     0% {
@@ -102,7 +103,7 @@
     width: var(--size);
     height: var(--size);
     border: 2px solid tomato;
-    animation: move-width 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+    animation: move-width var(--spide) cubic-bezier(0, 0, 1, 1) infinite;
   }
   @keyframes move-width {
     0% {
@@ -127,7 +128,7 @@
     width: var(--size);
     height: var(--size);
     border: 2px solid tomato;
-    animation: move-height 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+    animation: move-height var(--spide) cubic-bezier(0, 0, 1, 1) infinite;
   }
   @keyframes move-height {
     0% {
@@ -152,7 +153,7 @@
     width: var(--size);
     height: var(--size);
     border: 2px solid tomato;
-    animation: move__scale 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+    animation: move__scale var(--spide) cubic-bezier(0, 0, 1, 1) infinite;
   }
   @keyframes move__scale {
     0% {
@@ -177,7 +178,7 @@
     width: var(--size);
     height: var(--size);
     border: 2px solid tomato;
-    animation: move__rotate 1500ms cubic-bezier(0, 0, 1, 1) infinite;
+    animation: move__rotate var(--spide) cubic-bezier(0, 0, 1, 1) infinite;
   }
   @keyframes move__rotate {
     0% {

@@ -155,7 +155,7 @@
         <div class="curve-selection">
           {#each Object.entries(premadeEasings).slice(0, itemsToDisplay) as [group, _]}
             <h3 class="selection__title">
-              {group === "browser" ? "Browser defaults" : "VS Code presets"}
+              {group === "browser" ? "Popular easing" : "Extra easing"}
             </h3>
             {#each Object.entries(premadeEasings[group]).slice(0, itemsToDisplay) as [title, curve]}
               <SelectionCurve {title} {curve} {group} bind:currentEasingType />
