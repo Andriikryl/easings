@@ -34,7 +34,7 @@
 <style lang="scss">
   input:checked + label,
   input:focus + label {
-    box-shadow: 0 0 0 3px #ffc300;
+    box-shadow: 0 0 0 3px tomato;
   }
   label {
     display: flex;
@@ -52,41 +52,13 @@
       padding-block: 10px;
     }
   }
-  .circ code {
-    background: var(--lighterBlue);
-    border-color: var(--lighterBlue);
-    color: var(--black);
-  }
-  .sine code {
+
+  code {
     background: var(--yellow);
     border-color: var(--yellow);
     color: var(--black);
   }
-  .quad code {
-    background: var(--darkBlue);
-    border-color: var(--darkBlue);
-    color: var(--white);
-  }
-  .cubi code {
-    background: var(--lightBlue);
-    border-color: var(--lightBlue);
-    color: var(--black);
-  }
-  .quin code {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: var(--white);
-  }
-  .back code {
-    background: var(--red);
-    border-color: var(--red);
-    color: var(--white);
-  }
-  .expo code {
-    background: var(--darkGray);
-    border-color: var(--darkGray);
-    color: var(--white);
-  }
+
   .curve-selection__option-group {
     max-width: 300px;
   }
