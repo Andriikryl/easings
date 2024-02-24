@@ -4,13 +4,25 @@
 
 <header class="header">
   <Container>
-    <div>
-      <p class="name">header</p>
+    <div class="flex__group">
+      <div class="side__one"></div>
+      <div class="side__one"></div>
     </div>
   </Container>
 </header>
 
 <style>
+  .flex__group {
+    display: flex;
+  }
+  .side__one {
+    width: 50px;
+    height: 50px;
+    border: 1px solid tomato;
+  }
+  .side__one:nth-child(2) {
+    transform: translateX(-20px) translateY(10px);
+  }
   .header {
     position: sticky;
     top: 0;
@@ -19,14 +31,5 @@
     background-color: #f1faee;
     margin-block-end: 20px;
     z-index: 100;
-  }
-  .name {
-    text-transform: uppercase;
-    color: var(--black, #1b1b1b);
-    font-family: "Patrick Hand";
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 127.273% */
   }
 </style>
