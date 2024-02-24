@@ -162,11 +162,13 @@
             {/each}
           {/each}
         </div>
-        <div class="box">
-          <button class="select__more" on:click={() => (itemsToDisplay += 5)}
-            >Show More</button
-          >
-        </div>
+        {#if itemsToDisplay < 55}
+          <div class="box">
+            <button class="select__more" on:click={() => (itemsToDisplay += 5)}
+              >Show More</button
+            >
+          </div>
+        {/if}
       </div>
     </form>
 
