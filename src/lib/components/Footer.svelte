@@ -1,6 +1,6 @@
 <script>
   import Container from "./Container.svelte";
-  import Flag from "./Flag.svelte";
+  import Flag from "./flag/Flag.svelte";
 </script>
 
 <footer class="footer">

@@ -5,16 +5,16 @@
   import { onMount } from "svelte";
   import Container from "./Container.svelte";
   import { premadeEasings } from "../../utils/easingPar";
-  import CurentRectBeg from "./CurentRectBeg.svelte";
-  import CurentCircleMove from "./CurentCircleMove.svelte";
-  import EasingCode from "./EasingCode.svelte";
-  import CurentButton from "./CurentButton.svelte";
-  import CurentEasingPath from "./CurentEasingPath.svelte";
-  import CurentDragLins from "./CurentDragLins.svelte";
-  import CircleControls from "./CircleControls.svelte";
-  import SelectionCurve from "./SelectionCurve.svelte";
-  import AnimationBlock from "./AnimationBlock.svelte";
-  import ArrowDown from "./ArrowDown.svelte";
+  import CurentRectBeg from "./svg/CurentRectBeg.svelte";
+  import CurentCircleMove from "./svg/CurentCircleMove.svelte";
+  import EasingCode from "./svg/EasingCode.svelte";
+  import CurentButton from "./svg/CurentButton.svelte";
+  import CurentEasingPath from "./svg/CurentEasingPath.svelte";
+  import CurentDragLins from "./svg/CurentDragLins.svelte";
+  import CircleControls from "./svg/CircleControls.svelte";
+  import SelectionCurve from "./formSelections/SelectionCurve.svelte";
+  import AnimationBlock from "./animations/AnimationBlock.svelte";
+  import ArrowDown from "./icons/ArrowDown.svelte";
 
   let startHandleX: number = 30;
   let startHandleY: number = 140;

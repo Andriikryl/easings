@@ -1,6 +1,6 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
-  import { getAccordionOptions } from "../../store/context";
+  import { getAccordionOptions } from "../../../store/context";
 
   export let open = false;
   const componentId = crypto.randomUUID();

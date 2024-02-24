@@ -25,6 +25,11 @@
 </div>
 
 <style>
+  .movement__box {
+    border: 1px solid #ffc300;
+    padding: 20px;
+    margin-block-end: 20px;
+  }
   .movement__title {
     font-weight: bold;
     font-size: 40px;

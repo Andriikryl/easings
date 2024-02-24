@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Svelte GUI</title>
+  <title>Cubic Bezier Curves</title>
 </svelte:head>
 
 <Header />

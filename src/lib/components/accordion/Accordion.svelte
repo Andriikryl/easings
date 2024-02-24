@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { setAccordionOptions } from "../../store/context";
+  import { setAccordionOptions } from "../../../store/context";
   export let collapse = false;
   setAccordionOptions({ collapse });
 </script>

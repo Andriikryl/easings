@@ -1,5 +1,5 @@
 <script>
-  import ArrowDown from "./ArrowDown.svelte";
+  import ArrowDown from "./icons/ArrowDown.svelte";
   import Container from "./Container.svelte";
 </script>
 

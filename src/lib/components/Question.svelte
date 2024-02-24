@@ -1,7 +1,7 @@
 <script>
-  import Accordion from "./Accordion.svelte";
-  import AccordionItem from "./AccordionItem.svelte";
-  import ArrowDown from "./ArrowDown.svelte";
+  import Accordion from "./accordion/Accordion.svelte";
+  import AccordionItem from "./accordion/AccordionItem.svelte";
+  import ArrowDown from "./icons/ArrowDown.svelte";
 
   const items = [
     {

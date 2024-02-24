@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { range } from "../../utils/range";
+  import { range } from "../../../utils/range";
 
   let numOfColumns = 10;
   let staggeredDelay = 60;
